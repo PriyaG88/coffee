@@ -40,7 +40,6 @@ const formatGeoJson = data => {
     geoJson.features.push(tempObj);
 
   });
-  console.log(geoJson);
   formattedData = geoJson;
 };
 
