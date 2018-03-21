@@ -8,6 +8,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicHJpeWFnODgiLCJhIjoiY2plcTVnNjljMDRhNTJ3cDcwO
 const map = new mapboxgl.Map({
 container,
 style: 'mapbox://styles/mapbox/streets-v9',
+zoom: 13,
 maxBounds: nyBounds
 });
 
@@ -17,11 +18,17 @@ map.on('load', () => {
     type: 'symbol',
     source: {
       type: 'geojson',
-      data: formattedData
+      data: 'https://api.myjson.com/bins/19lqoz'
     },
     layout: {
       'icon-image': 'cafe-15',
       'icon-allow-overlap': true,
     }
+  });
+});
+
+map.on('click', 'locations', e => {
+  map.flyTo({
+    center: e.features[0].geometry.coordinates
   });
 });
