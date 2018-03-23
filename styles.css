@@ -14,6 +14,8 @@ body {
   box-sizing: inherit;
 }
 
+/* header */
+
 .header {
   z-index: 1;
   position: fixed;
@@ -30,7 +32,17 @@ body {
 .header-content {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+.tagline {
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: .18rem;
+}
+
+/* main-content */
 
 main {
   width: 100%;
@@ -59,34 +71,43 @@ main {
   position: relative;
 }
 
-.locations-search-container {
+.locations-header-container {
   background: #fff;
   margin-bottom: 1.6rem;
   padding-bottom: .8rem;
   min-height: 50px;
-  padding: 0 3.2rem;
+  padding: 0 2.2rem;
   width: 100%;
 }
 
-.search-input-container {
+.locations-header {
   display: flex;
   position: relative;
   padding-top: 1.6rem;
-}
-
-input {
-  padding-top: 10px;
-  padding-right: 48px;
-  border: 0;
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  white-space: nowrap;
-  line-height: normal;
-  font-size: 17px;
   font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: .18rem;
+
 }
 
-input:focus {
-  outline: none;
+.locations {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-item p:first-child {;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.location-item {
+  font-family: Gotham, Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 16px 32px;
+  font-size: 13px;
+  line-height: 10px;
+}
+
+.location-item:hover {
+  background: #fafafa;
 }
